@@ -5,11 +5,51 @@
   padding: 2rem;
   text-align: center;
   background-color: #1e1e1e;
+  font-family:
+    Inter,
+    /* 메인 폰트 */ -apple-system,
+    BlinkMacSystemFont,
+    /* iOS, 맥OS 대응 */ Roboto,
+    /* 안드로이드 대응 */ "Segoe UI",
+    /* 윈도우 대응 */ Arial,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    /* 기타 OS 대응 */ "Apple Color Emoji",
+    /* 애플 이모지 대응 */ "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    /* 윈도우 이모지 대응 */ sans-serif; /* 모든 기기 대응 */
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 145%; /* 23.2px */
 }
 
-.cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #xxxxxx;
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local("Inter Bold"),
+    url(/fonts/ttf/Inter-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local("Inter SemiBold"),
+    url(/fonts/ttf/Inter-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Inter Regular"),
+    url(/fonts/ttf/Inter-Regular.ttf) format("truetype");
 }
