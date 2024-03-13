@@ -30,6 +30,13 @@ export const Calculator: React.FC = () => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     const keyPressed = event.key;
 
+    if (
+      typeof keyPressed === "string" &&
+      ["+", "-", "*", "/", "%", "^", "÷"].includes(keyPressed) &&
+      ["+", "-", "*", "/", "%", "^", "÷"].includes(result.slice(-1))
+    ) {
+      return;
+    }
     if (keyPressed === "Enter") {
       try {
         setResult(calculate(result));
@@ -52,11 +59,18 @@ export const Calculator: React.FC = () => {
   };
 
   const handleButtonClick = (value: string | JSX.Element) => {
+    if (
+      typeof value === "string" &&
+      ["+", "-", "*", "/", "%", "^", "÷", "x"].includes(value) &&
+      ["+", "-", "*", "/", "%", "^", "÷", "x"].includes(result.slice(-1))
+    ) {
+      return;
+    }
     if (typeof value === "string") {
       if (value === "백스페이스") {
         setResult((prevResult) => prevResult.slice(0, -1));
-      } else if (value === "X") {
-        setResult((prevResult) => prevResult + "");
+      } else if (value === "x") {
+        setResult((prevResult) => prevResult + "*");
       } else if (value === "%") {
         setResult((prevResult) => {
           const parts = prevResult.split("%");
