@@ -29,7 +29,6 @@ export const Calculator: React.FC = () => {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     const keyPressed = event.key;
-
     if (
       typeof keyPressed === "string" &&
       ["+", "-", "*", "/", "%", "^", "÷"].includes(keyPressed) &&
@@ -154,10 +153,10 @@ export const Calculator: React.FC = () => {
           {buttonValues.map((value, index) => (
             <div
               key={index}
-              className={`${
+              className={`active:opacity-80 ${
                 typeof value === "string" &&
                 ["x", "÷", "+", "-", "%", "^"].includes(value)
-                  ? "bg-primary-ORANGE "
+                  ? "bg-primary-ORANGE"
                   : value === "="
                   ? "bg-primary-GRAY text-black"
                   : "bg-primary-NAVY"
@@ -174,15 +173,15 @@ export const Calculator: React.FC = () => {
                   ? "col-span-2 w-[115px]"
                   : "w-[65px] h-[45px]"
               }  ${index % 5 === 3 ? "ml-2.5" : ""} ${
-                index % 5 === 4 ? "mr-2.5" : ""
+                index % 5 === 4 ? "mr-2.5 " : ""
               }`}
               onClick={() => handleButtonClick(value)}
               tabIndex={0}
             >
               <p
-                className={`text-2xl ${
-                  value === "=" ? "text-black" : "text-white"
-                }`}
+                className={`text-2xl ${index % 5 === 3 ? "text-3xl" : ""} ${
+                  index % 5 === 4 ? "text-3xl" : ""
+                } ${value === "=" ? "text-black" : "text-white"}`}
               >
                 {value}
               </p>
